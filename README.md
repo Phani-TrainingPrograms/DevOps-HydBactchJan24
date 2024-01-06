@@ -67,3 +67,15 @@ There are various tools available like GIT(REPO), Jenkins(CI/CD), Docker(Contain
 ```
 wsl --install
 ```
+3. After restarting the machine, U should install the Docker Desktop app that U have downloaded from the Docker Website. If required, U register and then download the setup and install the software. 
+4. Docker gets started immediately after installation and one must wait for the docker to start. 
+5. If the Cmd is open, restart it. 
+#### How to install Mongodb in UR Docker as image:
+1. Run the following commands in the order in Command Prompt executed as Admin: 
+```
+docker pull mongodb/mongodb-community-server
+docker run --name mongo -d mongodb/mongodb-community-server:latest
+docker container ls
+docker exec -it mongo mongosh
+show dbs
+```
