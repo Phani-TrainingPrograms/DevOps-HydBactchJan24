@@ -79,3 +79,17 @@ docker container ls
 docker exec -it mongo mongosh
 show dbs
 ```
+
+### Steps for installing a Java App as a container in Docker:
+1. Create a folder called JavaApp
+2. Create the required java files for UR application in it. 
+3. Build the app and test it. 
+4. Create a Dockerfile(File name is case-sensitive), text file with no extension. Provide the approprite instructions as shared in the docker file. 
+5. Run the Docker commands to create the image and execute the Docker Container:
+```
+docker build -t java-app .
+docker run java-app
+```
+6. Important<b>Options</b>
+1. -t => To allocate Virtual Terminal within the container to start UR Program and view the results.
+2. -i =>To run the program in interactive mode, usually used when user inputs are expected from the Console window. 
