@@ -95,4 +95,52 @@ docker run java-app
 2. -i =>To run the program in interactive mode, usually used when user inputs are expected from the Console window.
 --------------------------------------------------------------------------------------------------------------------------------------------
 <img width="552" alt="image" src="https://github.com/Phani-TrainingPrograms/DevOps-HydBactchJan24/assets/131134278/12007292-244e-4343-ab69-4db3b4e87fe2">
+# Jenkins
+### What is Continuous Integration?
+- It is an automated process (Orchestration) with a chain of activities that should be peformed when a code is pushed into the REPO and rest of the operations are taken up automatically that helps in pipelining the application build, test and deployment  along with some operational sequences all done without an exclusive resource to monitor. 
+- The CIT(CI tool) is responsible to keep track on any code changes that are pushed into the repo. It has a feature of triggering a series of tasks and finally do a post build task before terminating the execution. 
+- After the operations are completed in a feel good mode, the post build operation would finally deploy the app on any container(Docker) or a cloud server to finally be consumed by the End Customers. 
+- It performs in a sequence where even if one of the tasks are failed, the rest of the operations will be stopped and email notifications will be sent to all the stake holders of the project to bring their attention and resolve it asap. 
 
+## Jenkins?
+- Jenkins is basically a server side Application that runs on Apache Tomcat server.It can be executed on multiple platforms. It is one of the most popular CI tool available in the computing world. 
+- Jenkins uses a concept called pipelines or group of tasks which work like a chain of operations. It has a continuous process that will monitor the environment all the time. 
+- It internally uses a lot of 3rd party tools like Git, Sonarlint, ESLint, JUnit and other software monitoring tools to build, test and monitor the app sequence raise reports for the performance monitoring, enforce coding stds as per the supplied LINTING Software, update the changes, and even send email notifications to all the stake holders about the process seqences. 
+
+## Installation of the JENKINS
+- Download the appropriate JDK(version 8 or later)
+- Download the Jenkins from the website and install it. 
+- During the installation, it will ask for the JRE location which U must select. 
+- U can optionally change the port no of the server to suit UR machine requirements. 
+- U can start the app at http://localhost:5000 and login into the App using default secret password shared in the below location: 
+- Location of the Secret default Admin password: C:\ProgramData\Jenkins\.jenkins\secrets\initialAdminPassword.
+- U can reset the password if required. 
+
+## Creating a job in JENKINS
+1. U develop the required App inside UR local repository.
+2. Click on new item in the dashboard of Jenkins to create a new job.
+3. Provide the description, choose the location of the directory in the Advanced Section and select Custom Repository. 
+4. In the build steps, select Windows Batch command and provide the commands required to make UR App run. 
+```
+javac ./FileName.java
+java FileName
+```
+5.  Additional settings like POST Build operations, Build scheduling can be done using the Configuration tool. 
+NOTE: Periodic scheduling can be placed on Min, Hour, Day and week. It follows the Cron Time syntax for setting the time and duration.  
+--------------------------------------------------------------------------------------
+# Kubernetes:
+- It is a container management system developed by Google. Its main purpose is helping in managing the containerized apps on various platforms like cloud, virtual servers and local servers. It is said to be one of he most popular containerization management tools.
+- It is purely a cloud based Environment which comes with a host of automation tools and servers that are used to maintain and manage the large scale Containers as one UNIT. 
+- k8S maintain multiple clusters for managing the components called NODES. 
+- K8s uses a concept called Clusters where ach cluster is a repository of 100s of containers grouped into Worker NODES or PODs. Each POD might be a group of containers differed based on a logical grouping. Each container might have one or more microservices in it with its dependencies placed in the container. 
+- K8s maintains the services using multiple clusters for the management of nodes. usually any app is available thru' primary cluster. However, at times if the primary cluster fails to load due to maintenance or some failures, then a repo of Secondary cluster will be provided so that the app does not break down. Once the primary cluster is back to business, the cached state of the secondary cluster that is running will be pushed into the primary cluster and will continue with its updated App state. With this, for the end users the App continues to provide its services without any concerns from the user. 
+
+### How K8s work internally?
+- Its is a linux based Environment that shares lots of resources required to manage the Complex aps. It is primarily used for Distributed computing Apps where the k8s abstract the underlying hardware resources and offers a std and consistant UI that a DevOps engineer can monitor from a common place. 
+- This UI will be available as simple yet allow to perform complex operations. 
+- It looks similar to Jenkins where one can monitor multiple apps, clustors and allocate the resoruces required for each of the application. The DevOps person cal determine the amount of resources that each app may required and allocate the resources accordingly. 
+
+### Issues:
+1. It needs a heavy infra to showcase the application. 
+2. The Complete pipeline is done by a team of testers, DevOps engineers and QAT teams. 
+3. It is a collaborative work to make UR services hosted in a K8s Server. It is not user friendly. But there are independent 3rd party UI tools that can manage this infrastructure. 
