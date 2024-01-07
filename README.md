@@ -94,4 +94,5 @@ docker run java-app
 1. -t => To allocate Virtual Terminal within the container to start UR Program and view the results.
 2. -i =>To run the program in interactive mode, usually used when user inputs are expected from the Console window.
 --------------------------------------------------------------------------------------------------------------------------------------------
+<img width="552" alt="image" src="https://github.com/Phani-TrainingPrograms/DevOps-HydBactchJan24/assets/131134278/12007292-244e-4343-ab69-4db3b4e87fe2">
 
