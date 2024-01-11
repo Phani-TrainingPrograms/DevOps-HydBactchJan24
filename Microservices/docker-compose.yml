@@ -1,0 +1,30 @@
+version: '3.4'
+networks:
+  backend:
+services:
+    employeedb:
+        container_name: employeedb
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=password@12345#
+        networks:
+            - backend
+        ports:
+            - 8001:1433
+    samplecorewebapi:
+        image: ${DOCKER_REGISTRY-}samplecorewebapi
+        build:
+          context: .
+          dockerfile: SampleCoreWebApi/Dockerfile
+        networks:
+            - backend
+        ports:
+            - 8002:1433
+        depends_on: 
+            - employeedb
+        environment:
+            - DB_HOST =employee-db
+            - DB_NAME =trainee
+            - DB_PWD =password@12345#
+            - DB_USER=sa
