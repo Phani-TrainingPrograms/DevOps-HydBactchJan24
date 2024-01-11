@@ -1,11 +1,3 @@
-# DevOps-HydBactchJan24
-
-## Sub topics:
-1. DevOps
-2. Docker
-3. Jenkins
-4. MicroServices
-5. Kubernetes. 
 ### What is DevOps?
 - DevOps is a mix of 2 words: Development and Operations.
 - There will be 2 teams who collaborate in the PDC. Developer Team and The Operations Team.
@@ -92,9 +84,8 @@ docker run java-app
 ```
 6. Important<b>Options</b>
 1. -t => To allocate Virtual Terminal within the container to start UR Program and view the results.
-2. -i =>To run the program in interactive mode, usually used when user inputs are expected from the Console window.
---------------------------------------------------------------------------------------------------------------------------------------------
-<img width="552" alt="image" src="https://github.com/Phani-TrainingPrograms/DevOps-HydBactchJan24/assets/131134278/12007292-244e-4343-ab69-4db3b4e87fe2">
+2. -i =>To run the program in interactive mode, usually used when user inputs are expected from the Console window. 
+
 # Jenkins
 ### What is Continuous Integration?
 - It is an automated process (Orchestration) with a chain of activities that should be peformed when a code is pushed into the REPO and rest of the operations are taken up automatically that helps in pipelining the application build, test and deployment  along with some operational sequences all done without an exclusive resource to monitor. 
@@ -144,3 +135,25 @@ NOTE: Periodic scheduling can be placed on Min, Hour, Day and week. It follows t
 1. It needs a heavy infra to showcase the application. 
 2. The Complete pipeline is done by a team of testers, DevOps engineers and QAT teams. 
 3. It is a collaborative work to make UR services hosted in a K8s Server. It is not user friendly. But there are independent 3rd party UI tools that can manage this infrastructure. 
+
+# Microservices:
+1. They are small scale apps that are created while breaking down large app into smaller modular units which are designed to work independently of one another. 
+2. With the new development methodologies, where the final product is never understood and only small updations of app happen over short intervals of time, microservices are the way to go.
+3. UR Service is hosted insider the serverless environment registered under a service broker who publishes your services and allows customer to discover the services based on their search engines and the service providers they are having business with. 
+4. Microservices can be developed under various technologies like Java-Springboot, .NET CORE and .NET WEB API and other open source projects like NODEJS-EXPRESS , NESTJS and many more. 
+5. Our example will be on .NET CORE to develop an ASP.NET CORE WEB API Project that will connect a SQL server database. We will have 2 Docker containers that will have our App in one Docker image and the SQL server in another docker image. They both will be integrated using a language called YAML. We use Docker Compose tool to orchestrate the interaction between the .NET CORE and SQL server database. 
+6. U can try creating a REACT App that consumes this REST API. U will additional middleware like CORS and other DI tools. 
+
+#### The software requirements:
+1. Windows 10 or later 
+2. Visual Studio 2022 as docker support is provided from it. 
+3. Docker for Windows. 
+4. Docker tools for Visual Studio. 
+
+### How to create the App:
+1. VS 2022 should be selected. Create a ASP.NET CORE Web API project
+2. Better go for CODE FIRST Approach to create the data classes. Include the requried EF Tools
+3. Implement the DBContext and provide the required DI feature into Program.cs
+4. If connecting to SQL server, we will create an YAML file for downloading image of SQL server in the Docker compose. 
+5. Expose the service to be called by any Application. 
+
